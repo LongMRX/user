@@ -1,0 +1,16 @@
+@import 'ngx-toastr/toastr';
+.text-danger {
+  color: red;
+}
+html {
+  zoom: 0 !important;
+}
+.modal-open {
+  padding: 0!important;
+  display: inline !important;
+  overflow: auto !important;
+}
+body {
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}

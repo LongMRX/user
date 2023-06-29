@@ -1,0 +1,93 @@
+<div id="root">
+  <div class="layout undefined">
+    <div class="content" style="max-width: 375px;">
+      <div class="stacks stacks-body-wrap" style="opacity: 1;">
+        <div class="screen screen-stack">
+          <div class="screen-stack screen-stack-wrap">
+            <div class="animation-screen-stack" style="opacity: 1;">
+              <div class="animation-screen-stack-content" style="max-width: 375px;">
+                <div class="swapHeader" style="opacity: 1;">
+                  <div class="header " style="background-color: rgb(4, 109, 181);">
+                    <div class="button-back-left undefined">
+                      <div class="content-back" routerLink="/thong-tin-cua-toi">
+                        <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M15.92 18L9.67998 12L15.92 6" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                        </svg>
+                        <span class="title-back">Quay lại</span>
+                      </div>
+                    </div>
+                    <div class="header-title " style="left: 87.2656px; top: 16px; max-width: 222.75px;">Thông tin thẻ
+                      ngân hàng
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="content-screen-stack"
+              style="transform: translateX(0px); padding-bottom: 0px; padding-top: 54px;">
+              <div class="add-bank-infomation">
+                <div class="text-align-center fw-600 fs-14">Điền đầy đủ thông tin đúng và chính xác để được duyệt đơn
+                  vay nhanh chóng
+                </div>
+                <form novalidate="" class="ant-form ant-form-vertical" style="padding-top: 16px;" [formGroup]="addForm"
+                  (ngSubmit)="saveMybank()">
+                  <div class="ant-form-item">
+                    <div class="ant-row ant-form-item-row">
+                      <div class="ant-col ant-form-item-label"><label for="bankAccountName"
+                          class="ant-form-item-required" title="Tên chủ thẻ">Tên chủ thẻ</label></div>
+                      <div class="ant-col ant-form-item-control">
+                        <div class="ant-form-item-control-input">
+                          <div class="ant-form-item-control-input-content"><input class="ant-input input-custom"
+                              placeholder="Nhập tên đầy đủ của chủ thẻ" formControlName="account_name" id="bankAccountName" type="text" value=""></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ant-form-item">
+                    <div class="ant-row ant-form-item-row">
+                      <div class="ant-col ant-form-item-label"><label for="bankName" class="ant-form-item-required"
+                          title="Tên ngân hàng">Tên ngân hàng</label></div>
+                      <div class="ant-col ant-form-item-control">
+                        <div class="ant-form-item-control-input">
+                          <div class="ant-form-item-control-input-content"><input class="ant-input input-custom"
+                              placeholder="VD: MBbank" id="bankName" formControlName="bank" type="text" value=""></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ant-form-item">
+                    <div class="ant-row ant-form-item-row">
+                      <div class="ant-col ant-form-item-label"><label for="bankNumber" class="ant-form-item-required"
+                          title="Nhập số tài khoản ngân hàng">Nhập số tài
+                          khoản ngân hàng</label></div>
+                      <div class="ant-col ant-form-item-control">
+                        <div class="ant-form-item-control-input">
+                          <div class="ant-form-item-control-input-content"><input class="ant-input input-custom"
+                              inputmode="numeric" placeholder="VD: MBbank" formControlName="number_bank" id="bankNumber" type="text" value="">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="primary fs-14 fw-600">Chú ý: Thẻ ngân hàng nhập vào phải là thẻ trả trước (debit card).
+                    Không sử dụng thẻ tín dụng (credit card).
+                  </div>
+                  <div style="padding-top: 16px;">
+                    <div class="button-custom ">
+                      <button type="submit" [disabled]="disabled" class="ant-btn ant-btn-primary"><span>Gửi đi</span></button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="bottom-bar">
+              <div class="animation-screen-stack-content">
+                <div class="animation-screen-stack-content" style="max-width: 375px; transform: translateX(0px);"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

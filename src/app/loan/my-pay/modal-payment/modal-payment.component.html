@@ -1,0 +1,38 @@
+<div class="modal fade notification-approval" role="dialog">
+  <div class="modal-dialog">
+    <div class="card">
+      <div class="modal-header">
+        <h3 class="modal-title uppercase" id="exampleModalLabel">Thanh toán khoản vay</h3>
+      </div>
+      <div class="card-body text-center">
+        <div class="infor" [formGroup]="addForm" (ngSubmit)="save()">
+          <div>
+            <label class="">Ghi chú</label><br>
+              <input type="text" formControlName="note">
+          </div>
+          <div>
+            <label class="">Bằng chứng</label><br>
+            <button type="button" class="ant-btn ant-btn-primary" (click)="proof.click()"
+                    data-dismiss="modal"
+                    style="margin-top: 16px;">
+              <span>Chọn</span>
+            </button>
+              <input class="d-none" type="file" (change)="uploadProof($event)" #proof>
+          </div>
+        </div>
+        <div style="padding: 16px; margin-top: 75px">
+          <div class="button-custom d-flex">
+            <button type="button" class="ant-btn ant-btn-close" data-dismiss="modal" (click)="closeModal()"
+                    style="margin-top: 16px;">
+              <span>Thoát</span>
+            </button>
+            <button type="button" class="ant-btn ant-btn-success" data-dismiss="modal" (click)="save()"
+                    style="margin-top: 16px;">
+              <span>Gửi</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,339 @@
+<div id="root">
+  <div class="layout undefined">
+    <div class="content" style="max-width: 375px;">
+      <div class="stacks stacks-body-wrap" style="opacity: 1;">
+        <div class="screen screen-stack">
+          <div class="screen-stack screen-stack-wrap">
+            <div class="animation-screen-stack" style="opacity: 1;">
+              <div class="animation-screen-stack-content" style="max-width: 375px;">
+                <div class="swapHeader" style="opacity: 1;">
+                  <div class="header " style="background-color: rgb(4, 109, 181);">
+                    <div class="button-back-left undefined">
+                      <div class="content-back" routerLink="/thong-tin-cua-toi">
+                        <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M15.92 18L9.67998 12L15.92 6" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                        </svg>
+                        <span class="title-back">Quay lại</span>
+                      </div>
+                    </div>
+                    <div class="header-title " style="left: 111.812px; top: 16px; max-width: 222.75px;">Thông tin cá
+                      nhân
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="content-screen-stack"
+              style="transform: translateX(0px); padding-bottom: 0px; padding-top: 54px;">
+              <div class="add-profile">
+                <div class="text-align-center fw-600 fs-14">Điền đầy đủ thông tin đúng và chính xác để được duyệt đơn
+                  vay nhanh chóng
+                </div>
+                <form novalidate="" class="ant-form ant-form-vertical" style="padding-top: 16px;" [formGroup]="addForm" (ngSubmit)="saveMyProfile()">
+                  <div class="ant-form-item">
+                    <div class="ant-row ant-form-item-row">
+                      <div class="ant-col ant-form-item-label"><label for="literacy" class="ant-form-item-required"
+                          title="Trình độ học vấn">Nghề nghiệp</label>
+                      </div>
+                      <div class="ant-col ant-form-item-control">
+                        <div class="ant-form-item-control-input">
+                          <div class="ant-form-item-control-input-content"><input class="ant-input input-custom"
+                              placeholder="Ví dụ: Kinh doanh" id="literacy" type="text" value="" formControlName="academic_level">
+                          </div>
+                        </div>
+                        <div style="display: flex; flex-wrap: nowrap;" *ngIf="(addFormControl['academic_level'].touched
+                          ||submitted) &&
+                          addFormControl['academic_level'].errors?.['required']">
+                          <div class="ant-form-item-explain
+                            ant-form-item-explain-connected">
+                            <div role="alert" class="ant-form-item-explain-error" style="">
+                              Vui lòng nhập học vấn</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ant-form-item">
+                    <div class="ant-row ant-form-item-row">
+                      <div class="ant-col ant-form-item-label"><label for="note" class="ant-form-item-required"
+                          title="Mục đích vay vốn">Mục đích vay vốn</label>
+                      </div>
+                      <div class="ant-col ant-form-item-control">
+                        <div class="ant-form-item-control-input">
+                          <div class="ant-form-item-control-input-content"><textarea placeholder="Nhập mục đích vay vốn"
+                              id="note" class="ant-input input-custom-area" formControlName="loan_purpose"></textarea>
+                          </div>
+                        </div>
+                        <div style="display: flex; flex-wrap: nowrap;" *ngIf="(addFormControl['loan_purpose'].touched
+                          ||submitted) &&
+                          addFormControl['loan_purpose'].errors?.['required']">
+                          <div class="ant-form-item-explain
+                            ant-form-item-explain-connected">
+                            <div role="alert" class="ant-form-item-explain-error" style="">
+                              Vui lòng nhập mục đích</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ant-form-item">
+                    <div class="ant-row ant-form-item-row">
+                      <div class="ant-col ant-form-item-label"><label for="isHaveHome" class="ant-form-item-required"
+                          title="Có nhà cửa không">Có nhà cửa không</label>
+                      </div>
+                      <div class="ant-col ant-form-item-control">
+                        <select class="form-select" aria-label="Default select example" formControlName="house">
+                          <option value="1" selected>Có</option>
+                          <option value="2">Không</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ant-form-item">
+                    <div class="ant-row ant-form-item-row">
+                      <div class="ant-col ant-form-item-label"><label for="motobikeName" class=""
+                          title="Có xe cộ không">Có xe cộ không</label>
+                      </div>
+                      <div class="ant-col ant-form-item-control">
+                        <div class="ant-form-item-control-input">
+                          <div class="ant-form-item-control-input-content"><input class="ant-input input-custom"
+                              placeholder="Nhập tên xe cộ" id="motobikeName" type="text" value="" formControlName="vehicle"></div>
+                        </div>
+                        <div style="display: flex; flex-wrap: nowrap;" *ngIf="(addFormControl['vehicle'].touched
+                        ||submitted) &&
+                        addFormControl['vehicle'].errors?.['required']">
+                        <div class="ant-form-item-explain
+                          ant-form-item-explain-connected">
+                          <div role="alert" class="ant-form-item-explain-error" style="">
+                            Vui lòng nhập xe cộ</div>
+                        </div>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ant-form-item">
+                    <div class="ant-row ant-form-item-row">
+                      <div class="ant-col ant-form-item-label"><label for="salary" class="ant-form-item-required"
+                          title="Tiền lương hàng tháng">Tiền lương hàng
+                          tháng</label></div>
+                      <div class="ant-col ant-form-item-control">
+                        <div class="ant-form-item-control-input">
+                          <div class="ant-form-item-control-input-content"><input
+                              class="ant-input input-custom undefined" placeholder="Nhập tiền lương hàng tháng"
+                              id="salary" pattern="[0-9]*" inputmode="numeric" type="text" value="" formControlName="salary"></div>
+                        </div>
+                        <div style="display: flex; flex-wrap: nowrap;" *ngIf="(addFormControl['salary'].touched
+                        ||submitted) &&
+                        addFormControl['salary'].errors?.['required']">
+                        <div class="ant-form-item-explain
+                          ant-form-item-explain-connected">
+                          <div role="alert" class="ant-form-item-explain-error" style="">
+                            Vui lòng nhập lương hàng tháng</div>
+                        </div>
+                      </div>
+                        <div style="display: flex; flex-wrap: nowrap;" *ngIf="addFormControl['salary'].errors?.['maxlength'] && (addFormControl['salary'].touched
+                        ||submitted)">
+                          <div class="ant-form-item-explain
+                          ant-form-item-explain-connected">
+                            <div role="alert" class="ant-form-item-explain-error" style="">
+                              Mức lương không được quá 20 ký tự</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ant-form-item">
+                    <div class="ant-row ant-form-item-row">
+                      <div class="ant-col ant-form-item-label"><label for="address" class="ant-form-item-required"
+                          title="Địa chỉ chi tiết">Địa chỉ chi tiết</label>
+                      </div>
+                      <div class="ant-col ant-form-item-control">
+                        <div class="ant-form-item-control-input">
+                          <div class="ant-form-item-control-input-content"><input class="ant-input input-custom"
+                              placeholder="Nhập địa chỉ chi tiết" id="address" type="text" value="" formControlName="address">
+                          </div>
+                        </div>
+                        <div style="display: flex; flex-wrap: nowrap;" *ngIf="(addFormControl['address'].touched
+                        ||submitted) &&
+                        addFormControl['address'].errors?.['required']">
+                        <div class="ant-form-item-explain
+                          ant-form-item-explain-connected">
+                          <div role="alert" class="ant-form-item-explain-error" style="">
+                            Vui lòng nhập địa chỉ chi tiết</div>
+                        </div>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ant-form-item">
+                    <div class="ant-row ant-form-item-row">
+                      <div class="ant-col ant-form-item-label"><label for="email" class=""
+                          title="Email">Email</label></div>
+                      <div class="ant-col ant-form-item-control">
+                        <div class="ant-form-item-control-input">
+                          <div class="ant-form-item-control-input-content"><input class="ant-input input-custom"
+                              inputmode="email" placeholder="Nhập email" id="email" type="text" value="" formControlName="email"></div>
+                        </div>
+                        <div style="display: flex; flex-wrap: nowrap;" *ngIf="(addFormControl['email'].touched
+                        ||submitted) &&
+                        addFormControl['email'].errors?.['required']">
+                        <div class="ant-form-item-explain
+                          ant-form-item-explain-connected">
+                          <div role="alert" class="ant-form-item-explain-error" style="">
+                            Vui lòng nhập email</div>
+                        </div>
+                      </div>
+                        <div style="display: flex; flex-wrap: nowrap;" *ngIf="(addFormControl['email'].touched
+                        ||submitted) &&
+                        addFormControl['email'].errors?.['email']">
+                          <div class="ant-form-item-explain
+                          ant-form-item-explain-connected">
+                            <div role="alert" class="ant-form-item-explain-error" style="">
+                              Vui lòng nhập đúng định dạng email</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fs-14 fw-600 uppercase">Thông tin liên hệ của gia đình</div>
+                  <div class="ant-form-item">
+                    <div class="ant-row ant-form-item-row">
+                      <div class="ant-col ant-form-item-label"><label for="relationType" class="ant-form-item-required"
+                          title="Mối quan hệ với bạn">Mối quan hệ với
+                          bạn</label></div>
+                      <div class="ant-col ant-form-item-control">
+                        <select class="form-select" aria-label="Default select example" formControlName="relationship_family">
+                          <option value="1" selected>Bố Mẹ</option>
+                          <option value="2">Vợ Chồng</option>
+                          <option value="3">Đồng nghiệp</option>
+                          <option value="4">Anh chị</option>
+                          <option value="5">Bạn</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ant-form-item">
+                    <div class="ant-row ant-form-item-row">
+                      <div class="ant-col ant-form-item-label"><label for="relationName" class="ant-form-item-required"
+                          title="Họ tên đầy đủ">Họ tên đầy đủ</label></div>
+                      <div class="ant-col ant-form-item-control">
+                        <div class="ant-form-item-control-input">
+                          <div class="ant-form-item-control-input-content"><input class="ant-input input-custom"
+                              placeholder="Nhập họ và tên" id="relationName" type="text" value="" formControlName="full_name_family">
+                            </div>
+                        </div>
+                        <div style="display: flex; flex-wrap: nowrap;" *ngIf="(addFormControl['full_name_family'].touched
+                        ||submitted) &&
+                        addFormControl['full_name_family'].errors?.['required']">
+                        <div class="ant-form-item-explain
+                          ant-form-item-explain-connected">
+                          <div role="alert" class="ant-form-item-explain-error" style="">
+                            Vui lòng nhập họ và tên</div>
+                        </div>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ant-form-item">
+                    <div class="ant-row ant-form-item-row">
+                      <div class="ant-col ant-form-item-label"><label for="relationPhone" class="ant-form-item-required"
+                          title="Số di dộng">Số di dộng</label></div>
+                      <div class="ant-col ant-form-item-control">
+                        <div class="ant-form-item-control-input">
+                          <div class="ant-form-item-control-input-content"><input class="ant-input input-custom"
+                              inputmode="tel" placeholder="Nhập số di động" id="relationPhone" type="text" value="" formControlName="phone_family">
+                          </div>
+                        </div>
+                        <div style="display: flex; flex-wrap: nowrap;" *ngIf="(addFormControl['phone_family'].touched
+                        ||submitted) &&
+                        addFormControl['phone_family'].errors?.['required']">
+                        <div class="ant-form-item-explain
+                          ant-form-item-explain-connected">
+                          <div role="alert" class="ant-form-item-explain-error" style="">
+                            Vui lòng nhập số điện thoại</div>
+                        </div>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fs-14 fw-600 uppercase">Các liên hệ khác</div>
+                  <div class="ant-form-item">
+                    <div class="ant-row ant-form-item-row">
+                      <div class="ant-col ant-form-item-label"><label for="relationType1" class=""
+                          title="Mối quan hệ với bạn">Mối quan hệ với
+                          bạn</label></div>
+                      <div class="ant-col ant-form-item-control">
+                        <select class="form-select" aria-label="Default select example" formControlName="relationship_other">
+                          <option value="1">Bố Mẹ</option>
+                          <option value="2">Vợ Chồng</option>
+                          <option value="3">Đồng nghiệp</option>
+                          <option value="4">Anh chị</option>
+                          <option value="5">Bạn</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ant-form-item">
+                    <div class="ant-row ant-form-item-row">
+                      <div class="ant-col ant-form-item-label"><label for="relationName1" class=""
+                          title="Họ tên đầy đủ">Họ tên đầy đủ</label></div>
+                      <div class="ant-col ant-form-item-control">
+                        <div class="ant-form-item-control-input">
+                          <div class="ant-form-item-control-input-content"><input class="ant-input input-custom"
+                              placeholder="Nhập họ và tên" id="relationName1" type="text" value="" formControlName="full_name_other"></div>
+                        </div>
+                        <div style="display: flex; flex-wrap: nowrap;" *ngIf="(addFormControl['full_name_other'].touched
+                        ||submitted) &&
+                        addFormControl['full_name_other'].errors?.['required']">
+                        <div class="ant-form-item-explain
+                          ant-form-item-explain-connected">
+                          <div role="alert" class="ant-form-item-explain-error" style="">
+                            Vui lòng nhập họ và tên</div>
+                        </div>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ant-form-item">
+                    <div class="ant-row ant-form-item-row">
+                      <div class="ant-col ant-form-item-label"><label for="relationPhone1" class=""
+                          title="Số di dộng">Số
+                          di dộng</label></div>
+                      <div class="ant-col ant-form-item-control">
+                        <div class="ant-form-item-control-input">
+                          <div class="ant-form-item-control-input-content"><input class="ant-input input-custom"
+                              inputmode="tel" placeholder="Nhập số di động" id="relationPhone1" type="text" value="" formControlName="phone_other">
+                          </div>
+                        </div>
+                        <div style="display: flex; flex-wrap: nowrap;" *ngIf="(addFormControl['phone_other'].touched
+                        ||submitted) &&
+                        addFormControl['phone_other'].errors?.['required']">
+                        <div class="ant-form-item-explain
+                          ant-form-item-explain-connected">
+                          <div role="alert" class="ant-form-item-explain-error" style="">
+                            Vui lòng nhập số điện thoại</div>
+                        </div>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="padding-top: 16px;">
+                    <div class="button-custom ">
+                      <button type="submit" [disabled]="disabled" class="ant-btn ant-btn-primary"><span>Gửi đi</span></button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="bottom-bar">
+              <div class="animation-screen-stack-content">
+                <div class="animation-screen-stack-content" style="max-width: 375px; transform: translateX(0px);"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

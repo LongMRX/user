@@ -1,0 +1,48 @@
+<div class="modal fade notification-approval" role="dialog">
+  <div class="modal-dialog">
+    <div class="card">
+      <div class="modal-header">
+        <h3 class="modal-title uppercase" id="exampleModalLabel">Đơn vay đã được xét duyệt</h3>
+      </div>
+      <div class="card-body text-center"><img class="img-notification"
+                                              src="../../../assets/image/loan.png">
+        <p class="message-notification">Chúc mừng quý khách. Hợp đồng số <b>{{loanPackage.contract_number}}</b> đã được
+          xét duyệt. Vui lòng
+          kiểm tra kỹ nội dung của hợp đồng số <b>{{loanPackage.contract_number}}</b> sau đây.
+          Quý khách cần Ký hợp đồng tín dụng này chậm nhất sau 2 ngày khi nhận được thông báo này.
+        </p>
+        <p class="message-notification">Trong trường hợp việc giải ngân hợp đồng tín dụng của quý khách vượt mức tăng
+          trưởng tín dụng Ngân hàng Nhà nước quy định cho Đại Phát, quý khách sẽ được cập nhật thời gian giải ngân trong
+          một thông báo khác trong một thời gian sớm nhất.<br>
+          Cảm ơn
+        </p>
+        <div class="infor">
+          <div>
+            <p class="">Số tiền vay<br>
+              <b>{{loanPackage?.total_loan | number:'1.0-0'}}</b></p>
+          </div>
+          <div>
+            <p class="">Thời hạn vay<br>
+              <b>{{loanPackage?.time}}</b></p>
+          </div>
+          <div>
+            <p class="">Lãi suất tháng(theo dư nợ ban đầu)<br>
+              <b>3.16%</b></p>
+          </div>
+          <div>
+            <p class="">Số tiền trả góp hàng tháng<br>
+              <b>{{loanPackage?.recurring_payment | number:'1.0-0'}}</b></p>
+          </div>
+        </div>
+        <div style="padding: 16px;" (click)="closeModal(loanPackage.id)">
+          <div class="button-custom ">
+            <button type="button" class="ant-btn ant-btn-primary" data-dismiss="modal"
+                    style="margin-top: 16px;">
+              <span>Xem hợp đồng</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,144 @@
+<div id="root">
+  <div class="layout ">
+    <div class="content" style="max-width: 375px;">
+      <div class="stacks stacks-body-wrap" style="opacity: 1;">
+        <div class="screen screen-stack">
+          <div class="screen-stack screen-stack-wrap">
+            <div class="animation-screen-stack" style="opacity: 1;">
+              <div class="animation-screen-stack-content" style="max-width:
+                375px;">
+                <div class="swapHeader" style="opacity:
+                  1;">
+                  <div class="header " style="background-color: rgb(4,
+                    109, 181);">
+                    <div class="button-back-left
+                      undefined">
+                      <div routerLink="/trang-ca-nhan" class="content-back"><svg
+                          width="26" height="24"
+                          viewBox="0 0 26 24" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path d="M15.92
+                            18L9.67998
+                            12L15.92 6" stroke="#fff" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                          </path>
+                        </svg><span class="title-back">Hồ
+                          sơ</span></div>
+                    </div>
+                    <div class="header-title " style="left: 112.227px; top:
+                      16px; max-width: 222.75px;">Bổ
+                      sung thông tin</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="content-screen-stack" style="transform: translateX(0px);
+              padding-bottom: 0px; padding-top: 54px;">
+              <div class="d-grid h-100">
+                <div class="profile">
+                  <div class="children-content" routerLink="/cccd-cmnd">
+                    <div class="children-content-icon"><img
+                        src="https://vaydaiphat.com/images/40c78f2965f0b680028a8e6defd6decd-id_cccd.svg"
+                        alt></div>
+                    <div class="children-content-info">
+                      <div class="children-content-title"><span>Thông
+                          tin CMND/CCCD <span style="color:
+                            rgb(4, 109,
+                            181);">*</span></span>
+                        <div class="children-content-status" *ngIf="(message$ | async) as data"
+                        [ngStyle]="{'color': data.user.status_cmnd == 1 ? 'rgb(33, 150, 83)' : ''}">{{
+                          data.user.status_cmnd == 1 ? 'Hoàn thành' : 'Chưa hoàn thành'}}
+                        </div>
+                      </div>
+                      <div class="children-content-description">Cho tôi biết
+                        tình hình hiện tại</div>
+                    </div>
+                  </div>
+                  <div class="children-content">
+                    <div class="children-content-icon"><img
+                        src="https://vaydaiphat.com/images/b52c97d152e153c99947a3f7d6274883-profile.svg"
+                        alt></div>
+                    <div class="children-content-info" routerLink="/them-thong-tin-ca-nhan">
+                      <div class="children-content-title"><span>Thông
+                          tin cá nhân <span style="color:
+                            rgb(4, 109,
+                            181);">*</span></span>
+                        <div class="children-content-status" *ngIf="(message$ | async) as data"
+                        [ngStyle]="{'color': data.user.status_infor == 1 ? 'rgb(33, 150, 83)' : ''}">{{
+                          data.user.status_infor == 1 ? 'Hoàn thành' : 'Chưa hoàn thành'}}</div>
+                      </div>
+                      <div class="children-content-description">Cho
+                        tôi biết tình hình hiện
+                        tại</div>
+                    </div>
+                  </div>
+                  <div class="children-content">
+                    <div class="children-content-icon"><img
+                        src="https://vaydaiphat.com/images/b95e49ed944edd879884f5894ceca947-creditcard.svg"
+                        alt>
+                    </div>
+                    <div class="children-content-info" routerLink="/ngan-hang">
+                      <div class="children-content-title"><span>Nhập
+                          thẻ ngân hàng <span style="color:
+                            rgb(4, 109,
+                            181);">*</span></span>
+                         <div class="children-content-status" *ngIf="(message$ | async) as data"
+                         [ngStyle]="{'color': data.user.status_bank == 1 ? 'rgb(33, 150, 83)' : ''}">{{
+                           data.user.status_bank == 1 ? 'Hoàn thành' : 'Chưa hoàn thành'}}</div>
+                      </div>
+                      <div class="children-content-description">Thông
+                        tin tài khoản vay</div>
+                    </div>
+                  </div>
+                  <div class="children-content" routerLink="/chu-ky">
+                    <div class="children-content-icon"><img
+                        src="https://vaydaiphat.com/images/8ecd60267b65149ba4856cc3d1a44b32-signature.svg"
+                        alt></div>
+                    <div class="children-content-info">
+                      <div class="children-content-title"><span>Chữ
+                          ký viết tay <span style="color:
+                            rgb(4, 109,
+                            181);">*</span></span>
+                        <div class="children-content-status" *ngIf="(message$ | async) as data"
+                             [ngStyle]="{'color': data.user.status_signature == 1 ? 'rgb(33, 150, 83)' : ''}">{{
+                          data.user.status_signature == 1 ? 'Hoàn thành' : 'Chưa hoàn thành'}}</div>
+                      </div>
+                      <div class="children-content-description">Ký
+                        tên trước khi vay</div>
+                    </div>
+                  </div>
+                  <div class="children-content" routerLink="/thong-tin-bo-sung">
+                    <div class="children-content-icon"><img
+                        src="https://vaydaiphat.com/images/182a55d88bc784c9413ace24002c74d8-camera.svg"
+                        alt></div>
+                    <div class="children-content-info">
+                      <div class="children-content-title"><span>Thông
+                          tin bổ sung</span>
+                          <div class="children-content-status" *ngIf="(message$ | async) as data"
+                          [ngStyle]="{'color': data.user.status_additional == 1 ? 'rgb(33, 150, 83)' : ''}">{{
+                            data.user.status_additional == 1 ? 'Hoàn thành' : 'Chưa hoàn thành'}}</div>
+                      </div>
+                      <div class="children-content-description">Tăng
+                        khả năng xét duyệt thành
+                        công</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bottom-bar">
+              <div class="animation-screen-stack-content">
+                <div class="animation-screen-stack-content" style="max-width:
+                  375px; transform:
+                  translateX(0px);">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </div>
+</div> -->

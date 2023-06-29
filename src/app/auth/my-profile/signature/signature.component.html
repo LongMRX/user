@@ -1,0 +1,55 @@
+<div id="root">
+  <div class="layout undefined">
+    <div class="content" style="max-width: 375px;">
+      <div class="stacks stacks-body-wrap" style="opacity: 1;">
+        <div class="screen screen-stack">
+          <div class="screen-stack screen-stack-wrap">
+            <div class="animation-screen-stack" style="opacity: 1;">
+              <div class="animation-screen-stack-content" style="max-width: 375px;">
+                <div class="swapHeader" style="opacity: 1;">
+                  <div class="header " style="background-color: rgb(4, 109, 181);">
+                    <div class="button-back-left undefined">
+                      <div class="content-back" routerLink="/thong-tin-cua-toi">
+                        <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M15.92 18L9.67998 12L15.92 6" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </svg>
+                        <span class="title-back">Quay lại</span></div>
+                    </div>
+                    <div class="header-title " style="left: 123.594px; top: 16px; max-width: 141.25px;">Chữ ký viết
+                      tay
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="content-screen-stack"
+                 style="transform: translateX(0px); padding-bottom: 0px; padding-top: 54px;">
+              <div class="hand-signature">
+                <div class="text-align-center fw-600 fs-14">Vui lòng ký vào ô dưới đây</div>
+                <canvas *ngIf="!signImage" class="hand-signature-sigCanvas" id="mySigCanvas" width="375" style="touch-action: none;" height="218" #mySigCanvas></canvas>
+                <img *ngIf="signImage" [src]="signImage"  width="375" height="375">
+                <div style="padding: 24px 16px;">
+                  <div class="button-custom ">
+                    <button [disabled]="signImage || notData" type="button" class="ant-btn ant-btn-primary" (click)="saveSignPad()"><span>Gửi đi</span></button>
+                  </div>
+                </div>
+                <div style="padding: 0px 16px;">
+                  <div class="button-custom">
+                    <button [disabled]="signImage" type="button" class="ant-btn ant-btn-primary ant-btn-background-ghost" (click)="clearSignPad()"><span>Ký lại</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bottom-bar">
+              <div class="animation-screen-stack-content">
+                <div class="animation-screen-stack-content" style="max-width: 375px; transform: translateX(0px);"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

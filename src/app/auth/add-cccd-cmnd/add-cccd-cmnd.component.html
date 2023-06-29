@@ -1,0 +1,384 @@
+<div id="root">
+  <div class="layout undefined">
+    <div class="content" style="max-width: 375px;">
+      <div class="stacks stacks-body-wrap" style="opacity: 1;">
+        <!-- <div class="screen screen-stack">
+          <div class="screen-stack screen-stack-wrap"> -->
+        <!-- </div> -->
+        <div class="screen screen-stack">
+        </div>
+        <div class="screen-stack
+          screen-stack-wrap">
+          <div class="animation-screen-stack" style="opacity: 1;">
+            <div class="animation-screen-stack-content" style="max-width:
+              375px;">
+              <div class="swapHeader" style="opacity: 1;">
+                <div class="header " style="background-color: rgb(4, 109,
+                  181);">
+                  <div class="button-back-left undefined">
+                    <div class="content-back" routerLink="/home"><svg width="26" height="24" viewBox="0 0 26 24"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.92
+                          18L9.67998 12L15.92 6" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round"></path>
+                      </svg><span class="title-back">Hồ sơ</span></div>
+                  </div>
+                  <div class="header-title " style="left: 115.602px; top:
+                    16px; max-width: 222.75px;">Quay lại</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- </div> -->
+        <div class="screen screen-stack">
+          <div class="screen-stack
+            screen-stack-wrap">
+            <div class="animation-screen-stack" style="opacity: 1;">
+              <div class="animation-screen-stack-content" style="max-width:
+                375px;">
+                <div class="swapHeader" style="opacity: 1;">
+                  <div class="header " style="background-color: rgb(4, 109,
+                    181);">
+                    <div class="button-back-left undefined">
+                      <div class="content-back" routerLink="/thong-tin-cua-toi"><svg width="26" height="24"
+                          viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M15.92
+                            18L9.67998 12L15.92 6" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                        </svg><span class="title-back">Quay lại</span></div>
+                    </div>
+                    <div class="header-title " style="left: 92.375px; top:
+                      16px; max-width: 222.75px;">Thông tin CMND/CCCD</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="content-screen-stack" style="transform:
+              translateX(0px); padding-bottom: 0px; padding-top: 54px;">
+              <div class="add-visa">
+                <div class="text-align-center fw-600
+                  fs-14">Điền đầy đủ thông tin đúng và chính xác để được
+                  duyệt đơn vay nhanh chóng</div>
+                <form novalidate="" class="ant-form ant-form-vertical" style="padding-top:
+                  16px;" [formGroup]="addCccdForm" (ngSubmit)="addCccd()">
+                  <div class="ant-form-item">
+                    <div class="ant-row
+                      ant-form-item-row">
+                      <div class="ant-col
+                        ant-form-item-label"><label for="fullName" class="ant-form-item-required"
+                          title="Tên đầy đủ">Tên
+                          đầy đủ</label></div>
+                      <div class="ant-col
+                        ant-form-item-control">
+                        <div class="ant-form-item-control-input">
+                          <div class="ant-form-item-control-input-content"><span
+                              class="ant-input-affix-wrapper input-custom"><span class="ant-input-prefix"><img
+                                  src="https://vaydaiphat.com/images/3ca29664d3559fc3c96e30bf61722372-SingleUser.svg"
+                                  alt="">
+                              </span>
+                              <input class="ant-input" placeholder="Nhập tên đầy đủ chính xác" id="fullName" type="text"
+                                value="{{name || ''}}" formControlName="name">
+                            </span>
+                          </div>
+                        </div>
+                        <div style="display: flex; flex-wrap: nowrap;" *ngIf="(addFormControl['name'].touched ||submitted) &&
+                          addFormControl['name'].errors?.['required']">
+                          <div class="ant-form-item-explain
+                            ant-form-item-explain-connected">
+                            <div role="alert" class="ant-form-item-explain-error" style="">
+                              Vui lòng nhập tên đầy đủ</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ant-form-item">
+                    <div class="ant-row
+                      ant-form-item-row">
+                      <div class="ant-col
+                        ant-form-item-label"><label for="day_of_birthday" class="ant-form-item-required"
+                          title="Ngày sinh">Ngày sinh</label></div>
+                      <div class="ant-col
+                        ant-form-item-control">
+                        <div class="ant-form-item-control-input">
+                          <div class="ant-form-item-control-input-content"><span
+                              class="ant-input-affix-wrapper input-custom"><span class="ant-input-prefix"><img
+                                  src="https://vaydaiphat.com/images/3ca29664d3559fc3c96e30bf61722372-SingleUser.svg"
+                                  alt="">
+                              </span>
+                              <input class="ant-input" id="day_of_birthday" type="date"
+                                [value]="day_of_birthday || ''" formControlName="day_of_birthday">
+                            </span>
+                          </div>
+                        </div>
+                        <div style="display: flex; flex-wrap: nowrap;" *ngIf="(addFormControl['day_of_birthday'].touched ||submitted) &&
+                          addFormControl['day_of_birthday'].errors?.['required']">
+                          <div class="ant-form-item-explain
+                            ant-form-item-explain-connected">
+                            <div role="alert" class="ant-form-item-explain-error" style="">
+                              Vui lòng nhập ngày sinh</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ant-form-item">
+                    <div class="ant-row
+                      ant-form-item-row">
+                      <div class="ant-col
+                        ant-form-item-label"><label for="permanent_address" class="ant-form-item-required"
+                          title="Tên đầy đủ">Địa chỉ thường trú</label></div>
+                      <div class="ant-col
+                        ant-form-item-control">
+                        <div class="ant-form-item-control-input">
+                          <div class="ant-form-item-control-input-content"><span
+                              class="ant-input-affix-wrapper input-custom"><span class="ant-input-prefix"><img
+                                  src="https://vaydaiphat.com/images/3ca29664d3559fc3c96e30bf61722372-SingleUser.svg"
+                                  alt="">
+                              </span>
+                              <input class="ant-input" placeholder="Nhập tên đầy đủ chính xác" id="permanent_address" type="text"
+                                value="{{permanent_address || ''}}" formControlName="permanent_address">
+                            </span>
+                          </div>
+                        </div>
+                        <div style="display: flex; flex-wrap: nowrap;" *ngIf="(addFormControl['permanent_address'].touched ||submitted) &&
+                          addFormControl['permanent_address'].errors?.['required']">
+                          <div class="ant-form-item-explain
+                            ant-form-item-explain-connected">
+                            <div role="alert" class="ant-form-item-explain-error" style="">
+                              Vui lòng nhập địa chỉ thường trú</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ant-form-item">
+                    <div class="ant-row
+                      ant-form-item-row">
+                      <div class="ant-col
+                        ant-form-item-label"><label for="indentifier" class="ant-form-item-required" title="Số
+                          CMND/CCCD">Số CMND/CCCD</label></div>
+                      <div class="ant-col ant-form-item-control">
+                        <div class="ant-form-item-control-input">
+                          <div class="ant-form-item-control-input-content"><span
+                              class="ant-input-affix-wrapper input-custom"><span class="ant-input-prefix"><svg
+                                  width="20" height="20" viewBox="0 0 20 20" fill="#046DB5"
+                                  xmlns="http://www.w3.org/2000/svg">
+                                  <g clip-path="url(#clip0_50_1186)">
+                                    <path d="M4.58334 14.1666C5.2737 14.1666
+                                      5.83334 13.607 5.83334 12.9166C5.83334
+                                      12.2263 5.2737 11.6666 4.58334
+                                      11.6666C3.89299 11.6666 3.33334
+                                      12.2263 3.33334 12.9166C3.33334 13.607
+                                      3.89299 14.1666 4.58334 14.1666Z"></path>
+                                    <path d="M15.8333 2.5H4.16667C3.062 2.50132
+                                      2.00296 2.94073 1.22185
+                                      3.72185C0.440735 4.50296 0.00132321
+                                      5.562 0 6.66667L0 13.3333C0.00132321
+                                      14.438 0.440735 15.497 1.22185
+                                      16.2782C2.00296 17.0593 3.062 17.4987
+                                      4.16667 17.5H15.8333C16.938 17.4987
+                                      17.997 17.0593 18.7782 16.2782C19.5593
+                                      15.497 19.9987 14.438 20
+                                      13.3333V6.66667C19.9987 5.562 19.5593
+                                      4.50296 18.7782 3.72185C17.997 2.94073
+                                      16.938 2.50132 15.8333 2.5ZM4.16667
+                                      4.16667H15.8333C16.4964 4.16667
+                                      17.1323 4.43006 17.6011 4.8989C18.0699
+                                      5.36774 18.3333 6.00363 18.3333
+                                      6.66667H1.66667C1.66667 6.00363
+                                      1.93006 5.36774 2.3989 4.8989C2.86774
+                                      4.43006 3.50363 4.16667 4.16667
+                                      4.16667ZM15.8333
+                                      15.8333H4.16667C3.50363 15.8333
+                                      2.86774 15.5699 2.3989 15.1011C1.93006
+                                      14.6323 1.66667 13.9964 1.66667
+                                      13.3333V8.33333H18.3333V13.3333C18.3333
+                                      13.9964 18.0699 14.6323 17.6011
+                                      15.1011C17.1323 15.5699 16.4964
+                                      15.8333 15.8333 15.8333Z"></path>
+                                  </g>
+                                  <defs>
+                                    <clipPath id="clip0_50_1186">
+                                      <rect width="20" height="20" fill="white"></rect>
+                                    </clipPath>
+                                  </defs>
+                                </svg>
+                              </span>
+                              <input class="ant-input" inputmode="numeric" formControlName="cccd_cmnd"
+                                placeholder="Vui lòng nhập số CMND/CCCD" id="indentifier" type="text"
+                                value="{{cccd || ''}}">
+                            </span>
+                          </div>
+                        </div>
+                        <div style="display: flex; flex-wrap: nowrap;" *ngIf="(addFormControl['cccd_cmnd'].touched
+                          ||submitted) &&
+                          addFormControl['cccd_cmnd'].errors?.['required']">
+                          <div class="ant-form-item-explain
+                            ant-form-item-explain-connected">
+                            <div role="alert" class="ant-form-item-explain-error" style="">
+                              Vui lòng nhập số CMND/CCCD</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="primary fw-500 fs-14">Bạn phải có thẻ căn cước
+                    của mình và nội dung rõ ràng và dễ đọc.</div>
+                  <div class="primary fw-500 fs-14">Xin xác nhận đã bật dùng
+                    quyền chụp ảnh.</div>
+                  <div style="padding-top: 34px;">
+                    <div class="ant-form-item">
+                      <div class="ant-row
+                        ant-form-item-row">
+                        <div class="ant-col ant-form-item-control">
+                          <div class="ant-form-item-control-input">
+                            <div class="ant-form-item-control-input-content">
+                              <div class="d-flex align-items-center">
+                                <div>
+                                  <div class="fw-500 fs-12 text-align-center" style="width: 119px; padding-right:
+                                    15px;">
+                                    <div>Tải ảnh mặt trước CMND/CCCD</div>
+                                    <div class="button-custom ">
+                                      <button for="before_cccd_cmnd" [ngStyle]="{'display': imageBf ? 'none' : '' }"
+                                        type="button" class="ant-btn
+                                        ant-btn-primary" style="height:
+                                        40px; margin-top: 16px;" (click)="before_cccd_cmnd.click()"><img
+                                          src="https://vaydaiphat.com/images/cf2728bf1ab984bf59c4e81914892d5d-upload.svg"
+                                          alt="" style="padding-bottom:
+                                          5px;"><span style="margin-left:
+                                          4px;">Tải ảnh</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="img_upload_cccd"><img [src]="before || imageBf ||
+                                    'https://vaydaiphat.com/images/366b509e93861c300ac8d51b60b4c10b-CCCDBefore.svg'"
+                                    alt="" style="width: 100%;">
+                                </div>
+                              </div>
+                              <input class="d-none" type="file" accept="image/*" (change)="uploadBFCccd($event)"
+                                #before_cccd_cmnd>
+                            </div>
+                            <div style="display: flex; flex-wrap: nowrap;" *ngIf="(addFormControl['before_cccd_cmnd'].touched
+                              ||submitted) &&
+                              addFormControl['before_cccd_cmnd'].errors?.['required']">
+                              <div class="ant-form-item-explain
+                                ant-form-item-explain-connected">
+                                <div role="alert" class="ant-form-item-explain-error" style="">
+                                  Vui lòng tải ảnh mặt sau CMND/CCCD</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ant-form-item">
+                      <div class="ant-row
+                        ant-form-item-row">
+                        <div class="ant-col
+                          ant-form-item-control">
+                          <div class="ant-form-item-control-input">
+                            <div class="ant-form-item-control-input-content">
+                              <div class="d-flex align-items-center" style="margin-top: 11px;">
+                                <div>
+                                  <div class="fw-500 fs-12 text-align-center" style="width: 119px; padding-right:
+                                    15px;">
+                                    <div>Tải ảnh mặt sau CMND/CCCD</div>
+                                    <div class="button-custom ">
+                                      <button type="button" [ngStyle]="{'display': imageAt ? 'none' : '' }" class="ant-btn
+                                        ant-btn-primary" ant-click-animating-without-extra-node="false"
+                                        style="height: 40px; margin-top:16px;" (click)="after_cccd_cmnd.click()">
+                                        <img
+                                          src="https://vaydaiphat.com/images/cf2728bf1ab984bf59c4e81914892d5d-upload.svg"
+                                          alt="" style="padding-bottom:
+                                          5px;"><span style="margin-left:
+                                          4px;">Tải ảnh</span></button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="img_upload_cccd"><img [src]="after || imageAt ||
+                                    'https://vaydaiphat.com/images/b839fd8beb0fdf2349fcc2d51d1e4a37-CCCDAfter.svg'"
+                                    alt="" style="width: 100%;"></div>
+                              </div><input class="d-none" type="file" accept="image/*" (change)="uploadATCccd($event)"
+                                #after_cccd_cmnd>
+                            </div>
+                          </div>
+                          <div style="display: flex; flex-wrap: nowrap;" *ngIf="(addFormControl['after_cccd_cmnd'].touched
+                            ||submitted) &&
+                            addFormControl['after_cccd_cmnd'].errors?.['required']">
+                            <div class="ant-form-item-explain
+                              ant-form-item-explain-connected">
+                              <div role="alert" class="ant-form-item-explain-error" style="">
+                                Vui lòng tải ảnh chụp mặt thật và cầm CMND/CCCD</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ant-form-item">
+                      <div class="ant-row
+                        ant-form-item-row">
+                        <div class="ant-col
+                          ant-form-item-control">
+                          <div class="ant-form-item-control-input">
+                            <div class="ant-form-item-control-input-content">
+                              <div class="d-flex align-items-center" style="margin-top: 11px;">
+                                <div>
+                                  <div class="fw-500 fs-12 text-align-center" style="width: 119px; padding-right:
+                                    15px;">
+                                    <div>Tải ảnh chụp mặt thật và cầm
+                                      CMND/CCCD</div>
+                                    <div class="button-custom "><button
+                                        [ngStyle]="{'display': imageFace ? 'none' : '' }" type="button" class="ant-btn
+                                        ant-btn-primary" style="height: 40px; margin-top: 16px;"
+                                        (click)="face_cccd_cmnd.click()">
+                                        <img
+                                          src="https://vaydaiphat.com/images/cf2728bf1ab984bf59c4e81914892d5d-upload.svg"
+                                          alt="" style="padding-bottom:
+                                          5px;"><span style="margin-left:
+                                          4px;">Tải ảnh</span></button></div>
+                                  </div>
+                                </div>
+                                <div class="img_upload_cccd"><img [src]="face || imageFace ||
+                                    'https://vaydaiphat.com/images/e2f18bb16fe51090cfba7265b677e0da-FaceImage.svg'"
+                                    alt="" style="width: 100%;"></div>
+                              </div><input class="d-none" type="file" accept="image/*" (change)="uploadFace($event)"
+                                #face_cccd_cmnd>
+                            </div>
+                          </div>
+                          <div style="display: flex; flex-wrap: nowrap;" *ngIf="(addFormControl['face_cccd_cmnd'].touched
+                            ||submitted) &&
+                            addFormControl['face_cccd_cmnd'].errors?.['required']">
+                            <div class="ant-form-item-explain
+                              ant-form-item-explain-connected">
+                              <div role="alert" class="ant-form-item-explain-error" style="">
+                                Vui lòng tải ảnh mặt trước CMND/CCCD</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="margin-top: 32px;">
+                    <div class="button-custom "><button type="submit" [disabled]="disabled"
+                        class="ant-btn ant-btn-primary"><span>Gửi
+                          đi</span></button></div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="bottom-bar">
+              <div class="animation-screen-stack-content">
+                <div class="animation-screen-stack-content" style="max-width:
+                  375px; transform: translateX(0px);"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

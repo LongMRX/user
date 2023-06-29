@@ -1,0 +1,123 @@
+<div class="center">
+
+  <div class="chat">
+    <div class="contact bar">
+      <div class="pic stark"></div>
+      <div class="name">
+        {{user?.phone}}
+      </div>
+    </div>
+    <div class="messages" id="chat" #chatContainer>
+      <!-- <div class="time">
+        Today at 11:41
+      </div> -->
+      <div *ngFor="let msg of messageUser">
+        <div *ngIf="msg.message" style="display: flex" >
+          <div class="message {{user.id != msg.from_user ? 'parker' : 'stark'}} ">
+            <p> {{msg?.message}}</p>
+            <div class="time">
+              {{msg.created_at | date:'shortTime'}}
+            </div>
+          </div>
+          <div class="options" *ngIf="msg.message">
+            <div class="tipClick" (click)="showTooltip(msg.id)">
+            <svg class="" width="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+              <g id="SVGRepo_iconCarrier">
+                <circle cx="6.5" cy="12" r="1.5" fill="#000000"></circle>
+                <circle cx="12" cy="12" r="1.5" fill="#000000"></circle>
+                <circle cx="17.5" cy="12" r="1.5" fill="#000000"></circle>
+              </g>
+            </svg>
+            <div class="tooltipT" *ngIf="msg.showDeleteTooltip">
+              <span class="tooltip-text" (click)="deleteMessage(msg.id)">Xóa</span>
+            </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div *ngIf="msg.photo" style="display: flex" >
+          <div class="message {{user.id != msg.from_user ? 'parker-photo' : 'stark-photo'}} ">
+            <img *ngIf="msg?.photo" [src]="url + msg?.photo" width="100%" alt="" (click)="zoomImage(url + msg?.photo)">
+            <div class="time">
+              {{msg.created_at | date:'shortTime'}}
+            </div>
+          </div>
+          <div class="options" *ngIf="msg.photo && msg.message == ''">
+            <div class="tipClick" (click)="showTooltip(msg.id)">
+            <svg width="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+              <g id="SVGRepo_iconCarrier">
+                <circle cx="6.5" cy="12" r="1.5" fill="#000000"></circle>
+                <circle cx="12" cy="12" r="1.5" fill="#000000"></circle>
+                <circle cx="17.5" cy="12" r="1.5" fill="#000000"></circle>
+              </g>
+            </svg>
+            <div class="" *ngIf="msg.showDeleteTooltip">
+              <span class="tooltip-text" (click)="deleteMessage(msg.id)">Xóa</span>
+            </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="image-container">
+        <div *ngIf="image" class="overlay">
+          <img *ngIf="image" [src]="image" class="show-photo" alt="">
+          <svg viewBox="-2.4 -2.4 28.80 28.80" fill="none" xmlns="http://www.w3.org/2000/svg" (click)="removeImage()">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"
+               transform="translate(2.2799999999999994,2.2799999999999994), scale(0.81)">
+              <rect x="-2.4" y="-2.4" width="28.80" height="28.80" rx="14.4" fill="#d8e4e8" strokewidth="0"></rect>
+            </g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
+               stroke-width="0.72">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M5.46967 5.46967C5.76256 5.17678 6.23744 5.17678 6.53033 5.46967L18.5303 17.4697C18.8232 17.7626 18.8232 18.2374 18.5303 18.5303C18.2374 18.8232 17.7626 18.8232 17.4697 18.5303L5.46967 6.53033C5.17678 6.23744 5.17678 5.76256 5.46967 5.46967Z"
+                    fill="#f00505"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M18.5303 5.46967C18.8232 5.76256 18.8232 6.23744 18.5303 6.53033L6.53035 18.5303C6.23745 18.8232 5.76258 18.8232 5.46969 18.5303C5.17679 18.2374 5.17679 17.7626 5.46968 17.4697L17.4697 5.46967C17.7626 5.17678 18.2374 5.17678 18.5303 5.46967Z"
+                    fill="#f00505"></path>
+            </g>
+            <g id="SVGRepo_iconCarrier">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M5.46967 5.46967C5.76256 5.17678 6.23744 5.17678 6.53033 5.46967L18.5303 17.4697C18.8232 17.7626 18.8232 18.2374 18.5303 18.5303C18.2374 18.8232 17.7626 18.8232 17.4697 18.5303L5.46967 6.53033C5.17678 6.23744 5.17678 5.76256 5.46967 5.46967Z"
+                    fill="#f00505"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M18.5303 5.46967C18.8232 5.76256 18.8232 6.23744 18.5303 6.53033L6.53035 18.5303C6.23745 18.8232 5.76258 18.8232 5.46969 18.5303C5.17679 18.2374 5.17679 17.7626 5.46968 17.4697L17.4697 5.46967C17.7626 5.17678 18.2374 5.17678 18.5303 5.46967Z"
+                    fill="#f00505"></path>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="input" [formGroup]="messageForm">
+      <div class="input-icon">
+        <svg class="icon-file" viewBox="-3.12 -3.12 30.24 30.24" fill="none" xmlns="http://www.w3.org/2000/svg"
+             transform="rotate(0)" (click)="send_image.click()">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M5.00003 14.9968C5.41424 14.9968 5.75003 15.3326 5.75003 15.7468V18C5.75003 18.1381 5.86196 18.25 6.00003 18.25H18C18.1381 18.25 18.25 18.1381 18.25 18V15.7468C18.25 15.3326 18.5858 14.9968 19 14.9968C19.4142 14.9968 19.75 15.3326 19.75 15.7468V18C19.75 18.9665 18.9665 19.75 18 19.75H6.00003C5.03353 19.75 4.25003 18.9665 4.25003 18V15.7468C4.25003 15.3326 4.58582 14.9968 5.00003 14.9968Z"
+                  fill="#000000"></path>
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M12.2023 5.58088C12.6165 5.58088 12.9523 5.91667 12.9523 6.33088V14.4165C12.9523 14.8307 12.6165 15.1665 12.2023 15.1665C11.7881 15.1665 11.4523 14.8307 11.4523 14.4165V6.33088C11.4523 5.91667 11.7881 5.58088 12.2023 5.58088Z"
+                  fill="#000000"></path>
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M11.678 4.46356C11.9694 4.17885 12.4348 4.17885 12.7262 4.46356L16.0701 7.73038C16.3663 8.01984 16.3719 8.49468 16.0824 8.79097C15.7929 9.08725 15.3181 9.09278 15.0218 8.80332L12.2021 6.04855L9.38239 8.80332C9.08611 9.09278 8.61127 9.08725 8.32181 8.79097C8.03234 8.49468 8.03787 8.01984 8.33416 7.73038L11.678 4.46356Z"
+                  fill="#000000"></path>
+          </g>
+        </svg>
+        <input type="text" formControlName="message"/>
+        <input (change)="sendImage($event)" style="display: none" type="file" accept="image/*" #send_image/>
+        <button class="send-message" [disabled]="isButtonDisabled" (click)="handleMessage()">Gửi</button>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #modalZoomImage let-modal>
+  <app-model-zoom-image [zoomedImage]="zoomedImage"></app-model-zoom-image>
+</ng-template>

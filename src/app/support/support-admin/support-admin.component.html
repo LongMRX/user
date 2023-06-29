@@ -1,0 +1,17 @@
+<div class="contacts" *ngIf="!show">
+  <div class="contact" *ngFor="let user of users" (click)="readMessage(user.id)" >
+    <div class="pic rogers"></div>
+    <div >
+      <div class="name">
+        {{user?.phone}}
+      </div>
+      <div class="message">
+        {{user.latest_message?.message}}🍑
+      </div>
+    </div>
+    <div class="icon-delete-mess" (click)="deleteAll(user.id)">
+      <img src="https://icon-library.com/images/delete-icon-image/delete-icon-image-15.jpg" width="20px" alt="" srcset="">
+    </div>
+  </div>
+</div>
+<app-chat *ngIf="show" [messageUser]="messages" [user]="user"></app-chat>

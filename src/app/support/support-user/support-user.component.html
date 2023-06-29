@@ -1,0 +1,19 @@
+<div class="wallet" *ngIf="!show">
+  <div class="wallet-amount"
+    style="background: url(&quot;https://vaydaiphat.com/images/0c1362843d4d8269bc0741c4f21ac884-backgroundWallet.svg&quot;);">
+    <div class="cl-white fs-14">Liên hệ qua ứng dụng</div>
+    <a href="{{data?.app.link}}">
+    <div class="cl-white fs-32 fw-600 d-flex" style="cursor: pointer;">
+      {{data?.app.app}}
+    </div>
+    </a>
+    <div class="name-account-wallet"></div>
+  </div>
+  <div class="content-wallet">
+    <div class="text-align-center">
+      <button class="btn ant-btn-primary support-user" (click)="openChat()">Bắt đầu</button>
+      <div class="fs-16 mt-24" style="color: rgb(130, 130, 130);">Chat trực tuyến với nhân viên</div>
+    </div>
+  </div>
+</div>
+<app-chat-user *ngIf="show" [messageUser]="messages"></app-chat-user>
